@@ -56,3 +56,7 @@ function updateGameArea() {
     myGamePiece.newPos(); 
     myGamePiece.update();
 }
+function clearmove() {
+    myGamePiece.speedX = 0; 
+    myGamePiece.speedY = 0; 
+}
