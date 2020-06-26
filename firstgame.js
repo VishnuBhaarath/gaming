@@ -23,6 +23,8 @@ var myGameArea = {
     },
     stop : function() {
         clearInterval(this.interval);
+        crash = false;
+        updateGameArea()
     }
 }
 
@@ -71,6 +73,7 @@ function updateGameArea() {
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
             myGameArea.stop();
+
             return;
         } 
     }
@@ -118,7 +121,10 @@ function moveleft() {
 function moveright() {
     myGamePiece.speedX = 1; 
 }
+function restart(){
+   
 
+}
 function clearmove() {
     myGamePiece.speedX = 0; 
     myGamePiece.speedY = 0; 
