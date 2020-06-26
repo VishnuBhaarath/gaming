@@ -1,50 +1,13 @@
-
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-var x=120;
-var y=10;
-var speedY=0;
-var speedX=0;
-drawcomponent()
-function drawcomponent(){
-  ctx.fillStyle = "#FF0000";
-  ctx.fillRect(y+speedY, x+speedX, 30, 30);
- 
-}
-function updatesquare(x,y){
-
-      ctx.fillStyle = "#FF0000";
-      
-     
-      ctx.fillRect(y, x, 30, 30);
- }
- function moveup() {
-   
-     ctx.clearRect(y, x, 30, 30);
-     x=x-1
-     setInterval(updatesquare(x-1,y), 10);
+function startGame() {
+  myGameArea.start();
 }
 
-function movedown() {
-	ctx.clearRect(y, x, 30, 30);
-    x=x+1
-    updatesquare()
-}
-
-function moveleft() {
-	ctx.clearRect(y, x, 30, 30);
-    y=y+1
-    updatesquare()
- 
-}
-
-function moveright() {
-	ctx.clearRect(y, x, 30, 30);
-    y=y-1
-    updatesquare()
-}
-function clearmove() {
-   y=y
-   x=x
-   updatesquare()
+var myGameArea = {
+  canvas : document.createElement("canvas"),
+  start : function() {
+    this.canvas.width = 480;
+    this.canvas.height = 270;
+    this.context = this.canvas.getContext("2d");
+    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+  }
 }
