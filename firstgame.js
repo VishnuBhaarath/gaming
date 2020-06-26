@@ -8,10 +8,10 @@ var speedX=0;
 drawcomponent()
 function drawcomponent(){
   ctx.fillStyle = "#FF0000";
-  ctx.fillRect(y, x, 30, 30);
+  ctx.fillRect(y+speedY, x+speedX, 30, 30);
  
 }
-function updatesquare(){
+function updatesquare(x,y){
 
       ctx.fillStyle = "#FF0000";
       
@@ -21,25 +21,30 @@ function updatesquare(){
  function moveup() {
    
      ctx.clearRect(y, x, 30, 30);
-      x=x-1;
-     updatesquare()
+     x=x-1
+     setInterval(updatesquare(x-1,y), 10);
 }
 
 function movedown() {
 	ctx.clearRect(y, x, 30, 30);
-    x=x+1;
+    x=x+1
     updatesquare()
 }
 
 function moveleft() {
 	ctx.clearRect(y, x, 30, 30);
-    y=y+1;
+    y=y+1
     updatesquare()
  
 }
 
 function moveright() {
 	ctx.clearRect(y, x, 30, 30);
-    y=y-1;
+    y=y-1
     updatesquare()
+}
+function clearmove() {
+   y=y
+   x=x
+   updatesquare()
 }
