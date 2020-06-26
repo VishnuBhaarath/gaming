@@ -58,6 +58,7 @@ function updateGameArea() {
         myGameArea.stop();
     } else {
         myGameArea.clear();
+        myObstacle.x += -1;
         myObstacle.update();
         myGamePiece.x += myGamePiece.speedX;
         myGamePiece.y += myGamePiece.speedY;    
